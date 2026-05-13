@@ -3,89 +3,102 @@ const mongoose = require('mongoose');
 const Template = require('../models/Template');
 
 const templates = [
+    // Shayari Category - Urdu/Hindi poetry cards
     {
-        title: 'Sunset Love',
+        title: 'Sunset Love Shayari',
         category: 'Shayari',
-        imageUrl: 'https://picsum.photos/seed/shayari1/400/600',
+        imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400&h=600&fit=crop',
         isFree: true,
-        tags: ['love', 'urdu'],
+        tags: ['love', 'urdu', 'sunset'],
     },
     {
-        title: 'Rose Shayari',
+        title: 'Rose Romance Shayari',
         category: 'Shayari',
-        imageUrl: 'https://picsum.photos/seed/shayari2/400/600',
+        imageUrl: 'https://images.unsplash.com/photo-1496062031456-07b8f162a322?w=400&h=600&fit=crop',
         isFree: true,
-        tags: ['rose', 'romantic'],
+        tags: ['rose', 'romantic', 'poetry'],
+    },
+
+    // Birthday Category - Celebration cards
+    {
+        title: 'Birthday Celebration',
+        category: 'Birthday',
+        imageUrl: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&h=600&fit=crop',
+        isFree: true,
+        tags: ['birthday', 'celebration', 'balloons'],
     },
     {
-        title: 'Birthday Blast',
+        title: 'Golden Birthday Wishes',
         category: 'Birthday',
-        imageUrl: 'https://picsum.photos/seed/bday1/400/600',
-        isFree: true,
-        tags: ['birthday', 'celebration'],
-    },
-    {
-        title: 'Golden Birthday',
-        category: 'Birthday',
-        imageUrl: 'https://picsum.photos/seed/bday2/400/600',
+        imageUrl: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=400&h=600&fit=crop',
         isFree: false,
-        tags: ['birthday', 'premium'],
+        tags: ['birthday', 'premium', 'golden'],
     },
+
+    // Festival Category - Indian festivals
     {
         title: 'Diwali Sparkle',
         category: 'Festival',
-        imageUrl: 'https://picsum.photos/seed/fest1/400/600',
+        imageUrl: 'https://images.unsplash.com/photo-1605811345787-4d5d5d4b8f9f?w=400&h=600&fit=crop',
         isFree: true,
-        tags: ['diwali', 'festival'],
+        tags: ['diwali', 'festival', 'lights'],
     },
     {
         title: 'Holi Colors',
         category: 'Festival',
-        imageUrl: 'https://picsum.photos/seed/fest2/400/600',
+        imageUrl: 'https://images.unsplash.com/photo-1583241800698-9c2e0c3e9e3e?w=400&h=600&fit=crop',
         isFree: false,
-        tags: ['holi', 'premium'],
+        tags: ['holi', 'premium', 'colors'],
     },
+
+    // Joke Category - Funny/humorous cards
     {
         title: 'Morning Laugh',
         category: 'Joke',
-        imageUrl: 'https://picsum.photos/seed/joke1/400/600',
+        imageUrl: 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=400&h=600&fit=crop',
         isFree: true,
-        tags: ['funny', 'morning'],
+        tags: ['funny', 'morning', 'coffee'],
     },
     {
-        title: 'Office Joke',
+        title: 'Office Humor',
         category: 'Joke',
-        imageUrl: 'https://picsum.photos/seed/joke2/400/600',
+        imageUrl: 'https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=400&h=600&fit=crop',
         isFree: true,
-        tags: ['office', 'funny'],
+        tags: ['office', 'funny', 'work'],
     },
+
+    // Love Category - Romantic cards
     {
-        title: 'Heart Full',
+        title: 'Heart Full Love',
         category: 'Love',
-        imageUrl: 'https://picsum.photos/seed/love1/400/600',
+        imageUrl: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=400&h=600&fit=crop',
         isFree: true,
-        tags: ['love', 'heart'],
+        tags: ['love', 'heart', 'romantic'],
     },
     {
         title: 'Forever Love',
         category: 'Love',
-        imageUrl: 'https://picsum.photos/seed/love2/400/600',
+        imageUrl: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&h=600&fit=crop',
         isFree: false,
-        tags: ['love', 'premium'],
+        tags: ['love', 'premium', 'couple'],
     },
+
+    // Motivational Category - Inspirational cards
     {
         title: 'Rise & Shine',
         category: 'Motivational',
-        imageUrl: 'https://picsum.photos/seed/moti1/400/600',
+        imageUrl: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=400&h=600&fit=crop',
         isFree: true,
-        tags: ['morning', 'motivation'],
+        tags: ['morning', 'motivation', 'sunrise'],
     },
+
+    // Updesh Category - Wisdom/advice cards
     {
-        title: 'Updesh Daily',
+        title: 'Daily Wisdom',
         category: 'Updesh',
-        imageUrl: 'https://picsum.photos/seed/updesh1/400/600',
+        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=600&fit=crop',
         isFree: false,
-        tags: ['wisdom', 'premium'],
+        tags: ['wisdom', 'premium', 'nature'],
     },
 ];
 

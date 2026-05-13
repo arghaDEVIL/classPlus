@@ -3,9 +3,11 @@ import { Badge } from './ui/badge';
 import { Card } from './ui/card';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
 import { useAuth } from '../context/AuthContext';
+import { getCardDesign } from './GreetingCardDesign';
 
 export default function TemplateCard({ template, onSelect, onPremiumClick, compact }) {
     const { dbUser } = useAuth();
+    const cardDesign = getCardDesign(template.category);
 
     const handleClick = () => {
         if (template.isFree) {
@@ -18,7 +20,7 @@ export default function TemplateCard({ template, onSelect, onPremiumClick, compa
     return (
         <Card
             className={`overflow-hidden rounded-2xl cursor-pointer hover:scale-[1.02] transition-transform duration-200 ${compact ? 'w-36 h-52 flex-shrink-0' : 'w-full h-64'
-                }`}
+                } ${cardDesign.border}`}
             onClick={handleClick}
         >
             <div className="relative w-full h-full">
@@ -29,6 +31,9 @@ export default function TemplateCard({ template, onSelect, onPremiumClick, compa
                     crossOrigin="anonymous"
                     alt={template.title}
                 />
+
+                {/* Category-specific overlay */}
+                <div className={`absolute inset-0 z-[5] ${cardDesign.overlay}`} />
 
                 {/* Top gradient overlay */}
                 <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/70 to-transparent z-10" />
@@ -47,6 +52,9 @@ export default function TemplateCard({ template, onSelect, onPremiumClick, compa
                         {dbUser?.name?.[0] || 'G'}
                     </AvatarFallback>
                 </Avatar>
+
+                {/* Category-specific text area */}
+                {!compact && <div className="z-[15]">{cardDesign.textArea}</div>}
 
                 {/* Badge (bottom-right) */}
                 <div className="absolute bottom-2 right-2 z-20">
